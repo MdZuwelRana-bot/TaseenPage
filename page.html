@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicy King Resturant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Handlee&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            background-color: beige;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+
+            /* font-family: 'Handlee', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif; */
+        }
+
+        .row {
+            width: 100%;
+        }
+
+        .row::after {
+            clear: both;
+            content: '';
+            display: block;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        /* header starts */
+        header {
+            background: #24a19c;
+            padding: 0% 1%;
+            text-align: center;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            color: white;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        nav ul li {
+            display: block;
+        }
+
+        nav ul li a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            line-height: 70px;
+            padding: 0 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-family: 'Roboto', sans-serif;
+            transition: .4s;
+        }
+
+        nav ul li a:hover {
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* header ends */
+
+        /* banner starts */
+        #banner-section {
+            background-image: url("./banner-image.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .banner-contents {
+            padding: 50px 10px;
+            text-align: center;
+        }
+
+        .banner-contents h1 {
+            width: 100%;
+            margin: 15px auto;
+            font-size: 3rem;
+            background: rgba(255, 255, 0, 0.884);
+            border-radius: 5px;
+            padding: 10px;
+            font-family: 'Handlee', cursive;
+            color: #cf0000;
+        }
+
+        .banner-contents p {
+            width: 300px;
+            margin: 15px auto;
+            background: rgb(0, 120, 0);
+            color: white;
+            padding: 10px;
+            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn {
+            width: 160px;
+            padding: 10px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 5px;
+            background: rgb(0, 120, 0);
+            text-transform: uppercase;
+            color: white;
+            transition: .4s;
+        }
+
+        .btn:hover {
+            transform: scale(1.2);
+        }
+
+        /* banner ends */
+
+        /* about starts */
+        #about-us {
+            padding: 1%;
+        }
+
+        .about-us-contents {
+            text-align: center;
+        }
+
+        .about-us-contents h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .about-us-contents p {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            opacity: 0.5;
+        }
+
+        /* about ends */
+
+        /* food-menu starts */
+        #menu-section {
+            padding: 1%;
+        }
+
+        .card-body {
+            text-align: center;
+            border: 2px solid black;
+        }
+
+        .card-body img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+
+        }
+
+        .item-desc {
+            background: rgb(165, 164, 164);
+        }
+
+        .item-name {
+            background: green;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            padding: 10px;
+        }
+
+        .item-desc>p {
+            font-size: 0.8rem;
+            padding: 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .card {
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        /* food-menu ends */
+
+        /* contact starts */
+        #contact {
+            padding: 1%;
+            background: #595b83;
+            
+        }
+
+        .map {
+            width: 100%;
+            height: 250px;
+        }
+
+        .contact-details {
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+
+
+        .contact-details p,
+        address {
+            font-size: 0.8rem;
+            font-weight: 300;
+        }
+
+        /* contact ends */
+
+        /* footer starts */
+        footer {
+            padding: 1%;
+            color: white;
+            background: #060930;
+        }
+
+        footer p {
+            line-height: 32px;
+            font-size: 0.8rem;
+            text-align: center;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .social-menus {
+            text-align: center;
+        }
+
+        .icon-style {
+            color: white;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 50%;
+            border: 1px solid white;
+            margin: 0 10px;
+            transition: .4s;
+            text-align: center;
+        }
+
+        .icon-style:hover {
+            background-color: grey;
+            transform: scale(1.2);
+        }
+
+        /* footer ends */
+
+        @media (min-width: 576px) {
+
+            .col-sm-1 {
+                width: 8.33%;
+            }
+
+            .col-sm-2 {
+                width: 16.66%;
+            }
+
+            .col-sm-3 {
+                width: 25%;
+            }
+
+            .col-sm-4 {
+                width: 33.33%;
+            }
+
+            .col-sm-5 {
+                width: 41.66%;
+            }
+
+            .col-sm-6 {
+                width: 50%;
+            }
+
+            .col-sm-7 {
+                width: 58.33%;
+            }
+
+            .col-sm-8 {
+                width: 66.66%;
+            }
+
+            .col-sm-9 {
+                width: 75%;
+            }
+
+            .col-sm-10 {
+                width: 83.33%;
+            }
+
+            .col-sm-11 {
+                width: 91.66%;
+            }
+
+            .col-sm-12 {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            .col-md-1 {
+                width: 8.33%;
+            }
+
+            .col-md-2 {
+                width: 16.66%;
+            }
+
+            .col-md-3 {
+                width: 25%;
+            }
+
+            .col-md-4 {
+                width: 33.33%;
+            }
+
+            .col-md-5 {
+                width: 41.66%;
+            }
+
+            .col-md-6 {
+                width: 50%;
+            }
+
+            .col-md-7 {
+                width: 58.33%;
+            }
+
+            .col-md-8 {
+                width: 66.66%;
+            }
+
+            .col-md-9 {
+                width: 75%;
+            }
+
+            .col-md-10 {
+                width: 83.33%;
+            }
+
+            .col-md-11 {
+                width: 91.66%;
+            }
+
+            .col-md-12 {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 992px) {
+
+            .logo-div {
+                text-align: left;
+            }
+
+            nav ul {
+                text-align: right;
+            }
+
+            nav ul li {
+                display: inline-block;
+            }
+
+            nav ul li a {
+                display: inline-block;
+                transition: .4s;
+            }
+
+            nav ul li a:hover {
+                background-color: transparent;
+                transform: scale(1.2);
+                text-decoration: underline;
+                border-radius: 0;
+            }
+
+            /* banner start */
+            #banner-section {
+                position: relative;
+                height: 100vh;
+            }
+
+            .banner-contents {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .banner-contents h1 {
+                width: 700px;
+                font-size: 3.5rem;
+            }
+
+            .banner-contents p {
+                width: 500px;
+                font-size: 2rem;
+            }
+
+            /* banner end */
+
+            /* footer start */
+            footer p {
+                text-align: left;
+            }
+
+            .social-menus {
+                text-align: right;
+            }
+
+            /* footer end */
+
+            .col-lg-1 {
+                width: 8.33%;
+            }
+
+            .col-lg-2 {
+                width: 16.66%;
+            }
+
+            .col-lg-3 {
+                width: 25%;
+            }
+
+            .col-lg-4 {
+                width: 33.33%;
+            }
+
+            .col-lg-5 {
+                width: 41.66%;
+            }
+
+            .col-lg-6 {
+                width: 50%;
+            }
+
+            .col-lg-7 {
+                width: 58.33%;
+            }
+
+            .col-lg-8 {
+                width: 66.66%;
+            }
+
+            .col-lg-9 {
+                width: 75%;
+            }
+
+            .col-lg-10 {
+                width: 83.33%;
+            }
+
+            .col-lg-11 {
+                width: 91.66%;
+            }
+
+            .col-lg-12 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- header starts -->
+
+        <header>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="logo-div">
+                        <a href="#">
+                            <i class="logo fas fa-utensils fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about-us">About Us</a></li>
+                            <li><a href="#menu-section">Food Menu</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- header ends -->
+
+        <main>
+
+            <!-- banner section starts -->
+            <section id="banner-section">
+                <div class="banner-contents">
+                    <h1>Spicy King Resturant 🌶️</h1>
+                    <p>20% discount for take away</p>
+                    <button class="btn">Order Now</button>
+                </div>
+            </section>
+            <!-- banner section ends -->
+
+            <!-- about us section starts -->
+            <section id="about-us">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="about-us-contents">
+                            <h3>About us</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum atque dolor? Sit
+                                voluptates ea soluta quam? Dignissimos perferendis adipisci,<br> dolorem, neque debitis
+                                cumque consequuntur placeat ratione suscipit nam illo expedita qui quisquam in est
+                                Quibusdam maxime quo mollitia <br>totam, praesentium error commodi atque dolores
+                                temporibus
+                                accusamus aspernatur sed in voluptatum expedita iure, numquam dicta qui facilis.<br>
+                                Deserunt mollitia dolores fugiat quia itaque optio veniam doloribus tempore, quis non a
+                                tenetur incidunt earum sapiente eos unde dignissimos <br>laboriosam expedita facilis?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- about us section ends -->
+
+            <!---- food menu section stats -->
+            <section id="menu-section">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="./chichen-fry.jpg">
+
+                                <div class="item-desc">
+                                    <h3 class="item-name">Chicken Fry</h3>
+                                    <p>Item No: 101</p>
+                                    <p>Rating: 4/5</p>
+                                    <p>Price: 7$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="./meat.jpg">
+
+                                <div class="item-desc">
+                                    <h3 class="item-name">Meat</h3>
+                                    <p>Item No: 102</p>
+                                    <p>Rating: 4.5/5</p>
+                                    <p>Price: 9$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="./goat.jpg">
+
+                                <div class="item-desc">
+                                    <h3 class="item-name">Goat Stew</h3>
+                                    <p>Item No: 103</p>
+                                    <p>Rating: 3.5/4</p>
+                                    <p>Price: 5$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="./biryani.jpg">
+
+                                <div class="item-desc">
+                                    <h3 class="item-name">Biryani</h3>
+                                    <p>Item No: 104</p>
+                                    <p>Rating: 4.5/5</p>
+                                    <p>Price: 12$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </section>
+            <section>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 taqya">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="./donut.jpg">
+
+                            <div class="item-desc">
+                                <h3 class="item-name">Donut</h3>
+                                <p>Item No: 105</p>
+                                <p>Rating: 4/5</p>
+                                <p>Price: 1$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 tania">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="./choclate.jpg">
+
+                            <div class="item-desc">
+                                <h3 class="item-name">Choclate</h3>
+                                <p>Item No: 106</p>
+                                <p>Rating: 4.5/5</p>
+                                <p>Price: 2$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 zuwel">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="./cake.jpg">
+
+                            <div class="item-desc">
+                                <h3 class="item-name">Cake</h3>
+                                <p>Item No: 107</p>
+                                <p>Rating: 4.5/5</p>
+                                <p>Price: 15$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section>
+                    <div class="col-lg-3 col-md-6 col-sm-12 taseen">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="./ice_cream.jpg">
+    
+                                <div class="item-desc">
+                                    <h3 class="item-name">Ice Cream</h3>
+                                    <p>Item No: 108</p>
+                                    <p>Rating: 4/5</p>
+                                    <p>Price: 2$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            </section>
+            <!---- food menu section ends -->
+
+            <!-- contact section starts -->
+            <section id="contact">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <iframe class="map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39731.968873158374!2d-0.20923075136721098!3d51.50866499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d595786349%3A0x26d4df293937aa1a!2sFallow!5e0!3m2!1sit!2sit!4v1713620928269!5m2!1sit!2sit"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="contact-details">
+                            <h3>Contact Details</h3> <br>
+                            <div>
+                                <h5>Spicy King Resturant</h5>
+                                <address>
+                                    192 London Road
+                                    Fallow, Haymarket
+                                </address> <br>
+                            </div>
+
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+442080171788</p> <br>
+                            </div>
+                            <div>
+                                <h5>Opening Hours: </h5>
+                                <p>
+                                    Tue-sun: 5pm to 11pm <br>
+                                    Inc. Bank Holidays
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- contact section ends -->
+        </main>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>&copy; All rights reversed by spicy king Resturant</p>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="social-menus">
+                        <a href="#"><i class="icon-style fas fa-arrow-up"></i></a>
+                        <a href="https://www.facebook.com/"><i class="icon-style fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/"><i class="icon-style fab fa-youtube"></i></a>
+                        <a href="https://www.twitter.com/"><i class="icon-style fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="icon-style fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
